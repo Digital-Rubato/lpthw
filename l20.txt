@@ -1,0 +1,62 @@
+#1
+#import from sys to importing argv 
+from sys import argv
+
+#3
+#putting script, and input_file from the argv
+script, input_file = argv
+
+#5
+#function with param "f" printing f with read() function
+def print_all(f):
+	print(f.read())
+
+#8
+# setting new function with def naming rewind() with seek() function
+def rewind(f):
+	f.seek(0)
+
+#11
+#2 params with line_count and f , then printing both params with readline() on f
+#current_line is printed next to the readline(), readline() just reads that line...
+def print_a_line(line_count, f):
+	print(line_count, f.readline())
+
+#14
+#open input_file transfer to current_file
+current_file = open(input_file)
+
+#16
+#print lines
+print("First let's print the whole file:\n")
+
+#18
+#call function print_all inputting current_file or an opened input_file
+print_all(current_file)
+
+#20
+#print
+print("Now let's rewind, kind of like a tape.")
+
+#22
+#puts the pointer back to the start of the file
+rewind(current_file)
+
+#24
+
+print("Let's print three lines:")
+
+#26
+#current_line set to 1 with new function print_a_line 2 params (1)
+current_line = 1
+print_a_line(current_line, current_file)
+
+#29
+#current_line ++ (2)
+current_line += 1
+print_a_line(current_line, current_file)
+
+#32
+#each increment prints the next line (3)
+current_line = current_line+1
+print_a_line(current_line, current_file)

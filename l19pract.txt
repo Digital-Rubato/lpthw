@@ -1,0 +1,13 @@
+#1
+def tenFunct(a,b):
+	c = a+b
+	print(f"This is a function that prints: {a}")
+	print(f"This is the same function that prints the other: {b}")
+	print(f"This is them together: {c}")
+
+tenFunct(5,2)
+
+tenFunct(2+3,4+5)
+
+tenFunct(2*4,8*8)
+

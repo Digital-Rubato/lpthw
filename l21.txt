@@ -1,0 +1,54 @@
+print("add a new variable for 'c'")
+c = int(input())
+print("add a 2nd new variable for 'd'")
+d = int(input())
+
+def seedee(c,d):
+	print("looking for a print")
+	return c + d
+
+disc = seedee(c,d)
+
+print(f"the number is : {disc}")
+
+#1
+def add(a, b):
+	print(f"Adding {a} + {b}")
+	return a + b
+
+#5
+def subtract(a,b):
+	print(f"Subtracting {a} - {b}")
+	return a - b
+
+#9
+def multiply(a, b):
+	print(f"Multiplying {a} * {b}")
+	return a * b
+
+#13
+def divide(a,b):
+	print(f"Dividing {a} / {b}")
+	return a / b
+
+#18
+print("Let's do some math with just functions!")
+
+#20
+age = add(30, 5)
+height = subtract(78, 4)
+weight = multiply(90, 2)
+iq = divide(100, 2)
+
+#25
+print(f"Age: {age}, Height: {height}, Weight: {weight}, IQ: {iq}")
+
+#28 
+#A puzzle for the extra credit, type it in anyway.
+print("Here is a puzzle.")
+
+#31
+what = add(age, subtract(height, multiply(weight, divide(iq,2))))
+
+#33
+print("That becomes: ", what, "Can you do it by hand?")

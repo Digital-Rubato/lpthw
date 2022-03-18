@@ -1,0 +1,116 @@
+python built in functions:
+
+from sys import argv - from the module sys, import the function or parameter argv
+	argv - a list containing all the command line arguments passed into the python script you are 				currently running
+		- the first entry in the list is the name of the script you are running
+		- when running the script with no arguments to argv, the script will only return the 			name of the current script you are working on
+		- argv does expect 2 values
+		- essentially : 
+
+			script = argv[0]
+			filename = argv[1]
+
+				or simply:
+
+			script, filename = argv
+		- if the script did not have the "script" variable, and only the "filename" variable 				then it would return this:
+				filename = argv
+				print("Filename:", filename)
+				>>> #prints ["my-script.py", "my-file.txt"]
+
+		- experiment notes: i didnt trust this. Ran the test myself. I created a small file:
+			from sys import argv
+			filename = argv
+			print("Filename: ", filename)
+
+ 		- When activating in powershell "py test.txt" the result is :
+			Filename:  ['test.txt']
+
+		- trying: py test.txt testfile.txt result:
+			Filename:  ['test.txt, 'testfile.txt']
+		
+		- Results of test: 
+			- tried to also run ' py textfile.txt ' for kicks, just errored out
+			- the "script" portion will insert itself into the results.
+			- can only guess that this is because of an item needing a place to go, so it 				forces itself into an existing one
+			- tried script change: 
+				py test.txt testfile.txt l10.txt
+
+				result:
+
+				Filename : ['test.txt', 'testfile.txt', 'l10.txt']
+
+			- seems as if it will just push as many variables into itself
+			- now i understand the 'array' example, it will just create more numbers for 				itself.	argv[0], argv[1], argv[2], etc.				
+
+read(fd,n) - reads the bytes from the / a file. It can have a parameter for size(the number of bytes to 		be read from the file. It's return value is the bytes read in a string
+	-reads at most 'n' bytles from file descriptor 'fd'
+
+readline() - reads a single line from the file. for loops can be applied in an effort to write 			efficient code("for line in f:")
+
+write(,"") - will write into your "selected file" the line which you choose. can be input with 			parameters such as a , w , r , r+ , b "append mode, write mode, read only mode, read 		and write mode, and binary mode" 
+	- binary mode can be read in terms of bytes
+	-It is suggested that using the keyword 'with' is good practice when dealing with file objects
+		The advantage suggested is that the file is properly closed after its suite finishes, 
+		even if an exception is raised(at some point) (' with ' is also much shorter than 			writing equivalent 'try-finally' blocks
+	-though if you are not using 'with' you should call 'close()' to free up system resources
+		-note- after the file is closed, calling it with a 'with' keyword will auto fail 		       because the obj is closed
+
+open(,"") - opens a file object for editting 
+	- open() can also take params like write()
+		Character	Meaning
+		'r'		open for reading
+		'w'		open for writing, truncating the file first
+		'x'		open for exclusive creation, failing if the file already exists
+		'a'		open for writing, appending to the end of the file if it exists
+		'b'		binary mode
+		't'		text mode (default)
+		'+'		open for updating (reading and writing)
+	- modes 'w+' and 'w+b' will open and truncate the file
+	- modes 'r+' and 'r+b' will open the file with no truncation
+
+close() - closes the file to prevent further changes and free acquired resources.
+	- this is called automatically when the iterator is exhausted or garbage collected, or when an 			error happens during iteratiing.
+	-However it is advisable to call it explicityly or use the 'with' statement
+
+truncate(path, length) - truncate the file corresponding to path, so that it is a tmost length bytes in 	size
+
+help('object') - invokes the in-built help system. 
+	- if the argument is a string, then the string is looked up as the name of a module, function, 			class, method, keyword, or doc topic, and a help page is printed to the console. If the 		argument is any other kind of obj, a help page on the obj is generated.
+
+int() - Return an integer object constructed from a number or string x, or return 0 if no arguments are 		given
+float() - Return a floating point number constructed from a number or string
+
+input() - If the prompt argument is present, it is written to standard output without a trailing 			newline.
+
+print() and print(f"") - objects to the text stream file, 
+	- all keyword arguments are converted to strings like str() does and writeen to the stream
+
+seek() - 
+
+format() - Convert a value to a "formatted" representation
+
+
+
+arithmatic operators - +'addition', -'subtraction' , *'multiplication', /'division'
+
+variables - can have '_' in the variable names
+
+escape sequences - 
+
+escape 		what it does
+\\		backslash(\)
+\'		single-quote(')
+\"		double-quote(")
+\a		ASCII bell(BEL)
+\b		ASCII backspace(BS)
+\f		ASCII formfeed(FF)
+\n		ASCII linefeed (LF)
+\N{name}	Character named name in the unicode database(Unicode only)
+\r		Carriage return(CR)
+\t		horizontal tab(TAB)
+\uxxxx		character with a 16-bit hex value 'xxxx'
+\Uxxxxxxxx	character with a 32-bit hex value 'xxxxxxxx'
+\v		ASCII vertical tab(VT)
+\ooo		Character with octal value ooo
+\xhh		Character with hex value hh

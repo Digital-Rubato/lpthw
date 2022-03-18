@@ -1,0 +1,29 @@
+#this one is like your scripts with argv
+#* makes it take any number of args as long as it can plant the args into variables
+def print_two(*args):
+	arg1, arg2  = args
+	print(f"arg1: {arg1}, arg2: {arg2}")
+
+#6
+#ok, that *args is actually pointless, we can just do this
+#as the thing says its pointless but more so because of redundancy
+def print_two_again(arg1, arg2):
+	print(f"arg1: {arg1}, arg2: {arg2}")
+
+#10
+#this just takes one argument
+#one argument
+def print_one(arg1):
+	print(f"arg1: {arg1}")
+
+#14
+#this one takes no arguments
+#it can take arguments but has no where to put the arguments should it take them, or use them
+def print_none():
+	print("I got nothin'.")
+
+#19
+print_two("Zed", "Shaw")
+print_two_again("Zed", "Shaw")
+print_one("First!")
+print_none()
