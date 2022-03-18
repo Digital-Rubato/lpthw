@@ -1,0 +1,16 @@
+formatter = "{} {} {} {}"
+
+print(formatter.format(1,2,3,4))
+print(formatter.format("one", "two", "three", "four"))
+print(formatter.format(True, False, False, True))
+print(formatter.format(formatter, formatter, formatter, formatter))
+
+print(formatter.format(
+	"add some", 
+	"additional text",
+	"here, maybe some",
+	"more text something spooky",
+#tried to add one more to test formatting instead of 4. but it seems limited to bracket 
+count and will not accept input if it doesnt have any matching inputs like nothing entered for index 4 out of 5 inputs
+	"one more to test"
+))

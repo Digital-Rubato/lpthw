@@ -1,0 +1,9 @@
+# a comment, this is you can read your program later.
+# Anything after the # is ignored by py.
+
+print ("I have code like this") # then after is this comment, which is ignored
+
+#you can use comments to disable or comment out code
+#print("like so")
+
+print("single lines will not run over")

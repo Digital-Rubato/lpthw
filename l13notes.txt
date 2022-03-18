@@ -1,0 +1,34 @@
+#accepting arguments or Parameters, Unpacking, Variables
+
+#takes from sys and imports argument variables (argv)
+from sys import argv
+#read the WYSS(what you should see) section for how to run this
+#assigns multiple variables in order from argv
+
+
+first = input("what is your first input? ")
+second = input("what is your second input? ")
+third = input("what is your third input? ")
+
+script, first, second, third = argv
+
+#prints accepted strings from argv, MUST HAVE 3 VARIABLES, script will pull the file name
+print("The script is called:", script)
+print("Your first variable is:", first)
+print("Your second variable is:", second)
+print("Your third variable is:", third)
+
+
+#WARNING!
+#Pay attention! You ahve been runnign python scripts without command line arguments. If you type only python3.6 ex13.py(or python 'filename') you are doing it wrong! Pay close attention to how I run it. This applies anytime you see argv being used.
+
+# argv is the argument variable, a very standard name in programming that you will find used in many other languages. This variable holds the arguments you pass to your Python script when you run it. In the excercies you will get to play with this more and see what happens.
+
+#line '3', script, first, second, third = argv, so that, rather than holding all the arguments, it gets assigned to four variables you can work with: script, first, second, and third. This may look strange, but "unpack" is probably the best word to describe what it does. It just says, "Take whatever is in argv, unpack it, and assign it to all of these variables on the left in order." Then it is printed like normal.
+
+
+#FEATURES HAVE ANOTHER NAME!
+#I call them "features" here(these little things you can 'import' to make your Python program do more) but nobody else calls them features. I just used that name because i needed to trick you into learning what they are without jargon. Before you can continue, you need to learn their real name: modules.
+
+#From now on we will be calling these "features" that we import modules. I'll say things like, "You want to import the sys module." They are also called "libraries " by other programmers, but let's just stick with modules.
+

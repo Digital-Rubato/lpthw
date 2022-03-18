@@ -1,0 +1,7 @@
+print("test this")
+
+print('single quote line')
+print("line 'with' both types of quotations")
+print('now for "the" inverse')
+#print("this is the error")
+"' this is a multi line comment ending comment line'"

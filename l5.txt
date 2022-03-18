@@ -1,0 +1,21 @@
+my_name = 'Zed A. Shaw'
+age = 35 #comment
+my_height = 74 # inches
+my_weight = 180 #pounds
+my_eyes = "blue"
+my_teeth = 'White'
+my_hair = 'brown'
+
+centi = my_height * 2.54
+kilo = round(my_weight / 2.20)
+
+print (f"let's talk about {my_name}.")
+print(f"He's {centi} inches tall")
+print(f"he's {kilo} pounds")
+print(f"Actually thats about right")
+print(f"He's got {my_eyes} eyes and {my_hair} hair")
+print(f"his teeth are usually {my_teeth} depending on the coffee.")
+
+total = age + my_height + my_weight
+print(f"if I add {age}, {centi}, and {kilo} I get {total}.")
+#why does it round at 289 it should be 304

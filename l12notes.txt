@@ -1,0 +1,56 @@
+python -m pydoc open:
+ mode is an optional string that specifies the mode in which the file
+    is opened. It defaults to 'r' which means open for reading in text
+    mode.  Other common values are 'w' for writing (truncating the file if
+    it already exists), 'x' for creating and writing to a new file, and 'a' for appending (which on 		some Unix systems, means that all writes append to the end of the file regardless of the 		current seek position).
+
+in text mode, if encoding is not specified the encoding used is platform dependent: locale.getpreferredencoding(false) is called ot get the current locale encoding. (for reading and writing raw bytes use binary mode and elave encoding unspecified.) The available modes are:
+
+Character	Meaning
+
+'r'		open for reading (default)	
+'w'		open for writing, truncating the file first
+'x'		create a new file and open it for writing
+'a'		open for writing, appending to the end of the file if it exists
+'b'		binary mode
+'t'		text mode(default)
+'+'		open a disk file for updating(reading and writing)
+'U'		universal newline mode(deprecated)
+cont.
+
+file:N\A
+
+OS: os- OS routines for NT or Posix depending on what system we're on.
+
+	MODULE REF: https://docs.python.org/3.9/library/os
+
+	the following docs is automatically generated from the Python source files. It may be incomplete, incorrect or include features that are considered implementation detail and may vary between Python implementations. When in doubt, consult the module reference at the location listed above.
+
+	DESC: 
+	This Exports: 
+		all fuctions from posix or nt, e.g. ulink, stat, etc.
+		os.path is either posixpath or ntpath
+		os.name is either 'posix' or 'nt'
+		os.curdir is a string representing the current directory(always '.')
+		os.pardir is a string rep. the parent directory (always '..')
+		os.sep is the (or a most common) pathname separator ('/' or '\\')
+		os.extsep is the extension sparator (always '.')
+		os.altsep is the alternate pathname separator (None or '/')
+		os.pathsep is the component separator used in $PATH etc
+		os.linesep is the line separator in text files ('\r' or '\n' or '\r\n')
+	cont.
+sys: module ref: https://docs.python.org/3.9/library/sys
+
+warning the following doc may be incorrect or incomplete.
+
+	DESC:
+	This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
+	Dynamic Objs:
+	
+	argv -- command line args; argv[0] is the script pathname if known
+	path -- - module search path; path[0] is the script directory, else ''
+	modules -- dictionary of loaded modules
+	displayhook -- called to show results in an interactive session
+	excepthook -- called to handle any uncaught exception other than SystemExit 
+
+cont
