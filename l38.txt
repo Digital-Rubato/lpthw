@@ -1,0 +1,67 @@
+'''
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
+
+print("Wait there are not 10 things in that list. Let's fix that.")
+
+#split the spaces in the string "ten_things"
+stuff = ten_things.split(' ')
+more_stuff = ['Day', 'Night', 'Song', 'Frisbee', 'Corn', 'Banana', 'Girl', 'Boy']
+
+#while the length of "stuff" is not equal to 10... then do..
+while len(stuff) != 10:
+	#pop(more_stuff)
+	next_one = more_stuff.pop()
+	print("Adding: ", next_one)
+	#append(next_one)
+	stuff.append(next_one)
+	print(f"There are {len(stuff)} items now.")
+
+print("There we go: ", stuff)
+
+print("Let's do some things with stuff.")
+
+#print(stuff at index 1)
+print(stuff[1])
+#print(stuff at index -1 or print the last item of the array/list)
+print(stuff[-1])
+#pop(stuff)
+print(stuff.pop())
+#reconnect stuff -> insert a ' ' (space) between each entry
+print(' '.join(stuff))
+#reconnect stuff with this inclusive / exclusive map. the first value"3" is inclusive so it means: stuff[3] but the second value "5" is exclusive and will actually refer to stuff[4]
+print('#'.join(stuff[3:5]))
+'''
+'''
+cat = "whiskers tails ears nose claws eyes fur"
+
+cat_things = cat.split(' ')
+
+add = ['Day', 'Night', 'Song', 'Frisbee', 'Corn', 'Banana', 'Girl', 'Boy']
+
+add.extend(cat_things)
+print(add)
+'''
+'''
+to_sort = ['Day', 'Night', 'Song', 'Frisbee', 'Corn', 'Banana', 'Girl', 'Boy']
+print(to_sort)
+to_sort.sort()
+print(to_sort)
+'''
+to_loop = ['Day', 'Night', 'Song', 'Frisbee', 'Corn', 'Banana', 'Girl', 'Boy']
+add_loop = ['Day', 'Night', 'Song', 'Frisbee', 'Corn', 'Banana', 'Girl', 'Boy']
+
+for x in add_loop:
+	print(x)
+	#infinite loop created when you dont type the program in correctly
+	if len(x) != 10:
+		popped = add_loop.pop()
+		to_loop.append(popped)
+	elif len(x) == 10:
+		print(x)
+'''
+while len(add_loop) != 10:
+	next_one = to_loop.pop()
+	add_loop.append(next_one)
+	print(add_loop)
+	
+'''

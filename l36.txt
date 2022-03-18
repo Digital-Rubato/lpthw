@@ -1,0 +1,126 @@
+# 4 rooms to start [complete/not complete]
+
+#weapons and armor to win against the boss
+
+#left right and forward
+
+#variable flags to check status, capitalize to ensure no traceback
+weapon = False
+armor = False
+
+#start / main room
+def start():
+	print("You see three doors.")
+	print("One to the left, one to the right, and one forward.")
+	print("Which door do you choose?")
+	print(armor, weapon)
+
+	choice = input("> ")
+
+	if choice == "forward":
+		boss_room()
+#if you get the armor you cant go back into the room
+	elif choice == "left":
+		armor_room()
+	elif choice == "right":
+		weapon_room()
+	elif choice == "quit":
+		print("ending")
+	else:
+#added start to reset the position, if not it will just quit out.
+		print("You must pick a direction traveler.")
+		start()
+
+
+#toggle boolean variable, was implemented and planned to be used before the discovery of the global variable, can use either function or direct assign
+def toggle_bool(var):
+	return not var
+
+
+#left room
+def armor_room():
+	global armor
+	print("You walk into the left door.")
+	
+	if armor == True:
+		print("You look around and see nothing else of note in this room.")
+		print("You turn around and head back out.")
+		start()
+
+	elif armor == False:
+		print("You find a suit of armor on the floor.")
+		print("This might come in handy. Do you take the armor on the floor?")
+
+		choice = input("> ")
+		a_choice = choice.lower()
+	
+		if a_choice == "yes" or a_choice == "y":
+			print("You pick up the chestplate, and rats scurry from the legs and arms.")
+			print("You shake the chest plate to get the last few rats and whatever else out of it.")
+			print("You fasten the armor to yourself and walk back to the main room.")
+#sets armor variable to true
+			armor = toggle_bool(armor)
+			print(armor)
+			start()
+
+		elif a_choice == "no" or a_choice == "n":
+			print("You hear a clatter from the armor as you approach.")			
+			print("Taken aback from the noise,You refuse the musty armor, and walk back out the door.")
+			start()
+		else:
+			print("Yes or no traveller")
+			armor_room()
+
+#right room		
+def weapon_room():
+	global weapon
+
+	if weapon == True:
+		print("There is not much else here, cept the blacksmithing tools that you didnt notice before.")
+		print("You don't know how to use them properly, so you leave the room. Maybe later.")
+		start()
+	elif weapon == False:
+		print("You walk into the right room.")
+		print("You dont see much. Sticks, broken stones, but in the pale moonlight you see a glint")
+		print("You move to the glint and move the boards, tools and barrels and find a sword")
+		print("Do you pick it up?")
+		choice = input("> ")
+		w_choice = choice.lower()
+		
+		if w_choice == "yes" or w_choice =="y":
+#could use toggle function or just assign it directly
+			weapon = True
+			print("You pick up the sword and wipe away the black dust from it.")
+			print("You stick it between your belt")
+			start()
+		elif w_choice == "no" or w_choice =="n":
+			print("You decide that the sword is not needed for your quest.")
+			print("You leave the room.")
+			start()		
+		else:
+			print("Yes or no traveller.")
+			weapon_room()
+#forward room
+def boss_room():
+	print("You walk into the forward most room.")
+	print("You feel a low rumble toward the back of the room.")
+
+	if weapon == True and armor == True:
+		print("You ready your armor and blade.")
+		print("The dark monster turns slowly, and notices the armor you wear and the sword you wield.")
+		print("It takes a swipe in your direction, but you expertly hold your sword to block the attack.")
+		print("It's giant hand fades to dust as it meets the sword.")
+		winner()
+
+	elif weapon == False:
+		print("You wish you had more items going into this fight.")
+		print("The dark monster moves slowly and rips into you.")
+		print("You die.")
+
+
+def winner():
+	print("You have defeated the monster, You Win.")	
+
+#seems "start()" should go at the bottom of the function, after the "def", to define it.
+
+start()
