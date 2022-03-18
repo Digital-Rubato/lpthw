@@ -1,0 +1,30 @@
+numbers = []
+
+countstart = int(input("Where do you want to start your count? >"))
+
+countend = int(input("Where do you want to end your count? >"))
+
+countrange = range(countstart, countend)
+
+#study practice: convert while loop to a for loop function call:
+def floop(count):
+	#recieve input from count	
+	#4
+	
+	for x in count:
+		print(f"At the top x is {x}")
+		numbers.append(x)
+
+		print("Numbers now: ", numbers)
+		print(f"At the bottom i is {x}")
+		
+	
+
+floop(countrange)
+#13
+print("The numbers: ")
+
+
+#15
+for num in numbers:
+	print(num)

@@ -1,0 +1,28 @@
+numbers = []
+
+countinput = int(input("What do you want to count? >"))
+increment = int(input("How much do you want to increment? > "))
+
+#study practice: convert while loop to a function call:
+def wloop(count, inc):
+	#recieve input from count	
+	#4
+	
+	i = 0
+	while i < count:
+		print(f"At the top i is {i}")
+		numbers.append(i)
+	
+	#8
+		i = i + inc
+		print("Numbers now: ", numbers)
+		print(f"At the bottom i is {i}")
+
+wloop(countinput, increment)
+#13
+print("The numbers: ")
+
+
+#15
+for num in numbers:
+	print(num)

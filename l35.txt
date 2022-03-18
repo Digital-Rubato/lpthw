@@ -1,0 +1,85 @@
+from sys import exit
+
+def gold_room():
+	print("This room is full of gold. How much do you take?")
+	
+	#6 found a solution with the try catch method. I must know more about ValueError. I can assume this is a catch. but Why. maybe a built in fucntion. but needs more research into the try catch method
+	#try:
+		#how_much = int(choice)
+	#except ValueError:
+	choice = input("> ")
+#rewrote if statement from the try. This is far simpler and straight to the point.
+	if int(choice):
+		how_much = int(choice)
+#if a string is put in. This else does not catch it. Instead it errors out the entire prog.
+#tried elif !int(choice): and elif string(choice): still nothing.
+#it is trying to rewind the whole program, line 83, 77, 47, 12, still does not recognize "many"
+#elif choice == False: also doesnt work. Try catch is perfect for this.
+	else:
+		print("Man, learn to type a number.")
+	
+	
+	#12
+	if how_much < 50:
+		print("Nice, you're not greedy, you win!")
+		exit(0)
+	else:
+		dead("You greedy bastard!")
+#19
+def bear_room():
+	print("There is a bear here.")
+	print("The bear has a bunch of honey.")
+	print("The fat bear is in front of another door.")
+	print("How are you going to move the bear?")
+	bear_moved = False
+	
+	while True:
+		choice = input("> ")
+		
+		if choice == "take honey":
+			dead("The bear looks at you then slaps your face off.")
+		
+		elif choice == "taunt bear" and not bear_moved:
+			print("The bear has moved from the door.")
+			print("You can go through it now.")
+			bear_moved = True
+		elif choice == "taunt bear" and bear_moved:
+			dead("The bear gets pissed off and chews your leg off.")
+		elif choice == "open door" and bear_moved:
+			gold_room()
+		else:
+			print("I got no idea what that means.")
+#43
+def cthulhu_room():
+	print("Here you see the great evil Cthulhu.")
+	print("He, it, whatever stares at you and you go insane.")
+	print("Do you flee for your life or eat your head?")
+
+	choice = input("> ")
+	
+	if "flee" in choice:
+		start()
+	elif "head" in choice:
+		dead("Well that was tasty!")
+	else:
+		cthulhu_room()
+#58
+def dead(why):
+	print(why, "Good job!")
+	exit(0)
+#62
+def start():
+	print("You are in a dark room.")
+	print("There is a door to your right and left.")
+	print("Which one do you take?")
+
+	choice = input("> ")
+
+	if choice == "left":
+		bear_room()
+	elif choice == "right":
+		cthulhu_room()
+	else:
+		dead("You stumble around the room until you starve.")
+#77
+start()
